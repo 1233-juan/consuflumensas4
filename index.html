@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consuflumen</title>
+
+  <!-- Font Awesome para íconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+    header {
+      background-color: #007bff;
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
+    nav {
+      background-color: #0056b3;
+      padding: 10px;
+      text-align: center;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: inline-block;
+    }
+    nav ul li {
+      display: inline-block;
+      position: relative;
+    }
+    nav ul li a {
+      color: white;
+      padding: 10px 15px;
+      text-decoration: none;
+      font-weight: bold;
+      display: block;
+    }
+    nav ul li a:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 4px;
+    }
+    nav ul li ul {
+      display: none;
+      position: absolute;
+      background: #004080;
+      min-width: 200px;
+      text-align: left;
+      border-radius: 4px;
+    }
+    nav ul li:hover ul {
+      display: block;
+    }
+    nav ul li ul li {
+      display: block;
+    }
+    section {
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background-color: white;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      margin-bottom: 40px;
+    }
+    h2 {
+      color: #007bff;
+      text-align: center;
+    }
+    .highlight {
+      color: #28a745;
+      font-weight: bold;
+    }
+
+    /* Galería */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Redes sociales */
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 15px;
+    }
+    .social-icons a {
+      font-size: 30px;
+      color: #007bff;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+    .social-icons a:hover {
+      transform: scale(1.2);
+      color: #28a745;
+    }
+
+    /* Formulario */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    input, textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      padding: 10px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+
+    /* Mapa responsive */
+    .map-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* relación 16:9 */
+      height: 0;
+      overflow: hidden;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    .map-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #0056b3;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    footer nav a {
+      color: #ddd;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+    footer nav a:hover {
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Consuflumen</h1>
+</header>
+
+<!-- Menú -->
+<nav>
+  <ul>
+    <li><a href="#inicio">Inicio</a></li>
+    <li><a href="#acerca">Acerca de</a></li>
+    <li><a href="#acerca-producto">Producto</a></li>
+    <li><a href="#testimonios">Testimonios</a></li>
+    <li><a href="#galeria">Galería</a></li>
+    <li><a href="#lo-mas-reciente">Lo Más Actual</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+</nav>
+
+<!-- Inicio -->
+<section id="inicio">
+  <div class="container">
+    <h2>Inicio</h2>
+    <p>Bienvenido a <span class="highlight">Consuflumen</span>, un dispositivo innovador para <strong>monitorear y optimizar el consumo de agua</strong>.</p>
+  </div>
+</section>
+
+<!-- Acerca de -->
+<section id="acerca">
+  <div class="container">
+    <h2>Acerca de</h2>
+    <h3 id="quienes-somos">¿Quiénes Somos?</h3>
+    <p>Somos una empresa comprometida con soluciones tecnológicas que faciliten la gestión del agua en hogares e industrias.</p>
+
+    <h3 id="mision">Misión / Visión</h3>
+    <p><strong>Misión:</strong> Implementar un dispositivo tecnológico que realice seguimiento constante del agua mediante app y hardware, ayudando al ahorro económico y ambiental.</p>
+    <p><strong>Visión:</strong> Para 2030 seremos líderes en soluciones de ahorro de agua a nivel regional, impactando hogares e industrias.</p>
+
+    <h3 id="valores">Valores</h3>
+    <ul>
+      <li>Responsabilidad ambiental</li>
+      <li>Innovación tecnológica</li>
+      <li>Compromiso con el usuario</li>
+      <li>Accesibilidad y sostenibilidad</li>
+    </ul>
+
+    <h3 id="hacemos">Qué Hacemos</h3>
+    <p>Diseñamos y desarrollamos un dispositivo madre con nodos que permiten medir el consumo de agua en m³ y dinero.</p>
+
+    <h3 id="ofrecemos">Qué Ofrecemos</h3>
+    <p>Un producto de calidad, asesoría técnica y soporte especializado para un uso eficiente del agua.</p>
+  </div>
+</section>
+
+<!-- Producto -->
+<section id="acerca-producto">
+  <div class="container">
+    <h2>Acerca del Producto</h2>
+    <h3 id="quees">¿Qué es Consuflumen?</h3>
+    <p>Un dispositivo innovador para monitorear el consumo de agua y conectarse con una aplicación móvil.</p>
+    <h3 id="funcionamiento-dispositivo">Funcionamiento Dispositivo</h3>
+    <p>Un módulo madre y nodos hijos instalados en el hogar recogen datos del flujo de agua y los transmiten vía Bluetooth.</p>
+    <h3 id="funcionamiento-app">Funcionamiento Aplicación</h3>
+    <p>La app muestra el consumo en tiempo real en m³ y dinero, con reportes e historial de uso.</p>
+    <h3 id="donde-pedirlo">¿Dónde pedirlo?</h3>
+    <p>Escríbenos a <strong>consuflumen@gmail.com</strong> o al <strong>+57 322 3769127</strong>.</p>
+    <h3 id="descargar-app">¿Dónde descargar la aplicación?</h3>
+    <p>Próximamente en <strong>Google Play</strong>. También podrás solicitar la beta privada.</p>
+  </div>
+</section>
+
+<!-- Testimonios -->
+<section id="testimonios">
+  <div class="container">
+    <h2>Testimonios</h2>
+    <div id="general">
+      <h3>General</h3>
+      <p>"Consuflumen me ayudó a reducir mi consumo mensual de agua en un 20%."</p>
+    </div>
+    <div id="destacados">
+      <h3>Destacados</h3>
+      <p>"La mejor inversión que he hecho para mi hogar y el planeta."</p>
+    </div>
+  </div>
+</section>
+
+<!-- Lo Más Reciente -->
+<section id="lo-mas-reciente">
+  <div class="container">
+    <h2>Lo Más Reciente</h2>
+    <div id="actualizaciones">
+      <h3>Últimas Actualizaciones</h3>
+      <p>Esta sección está en proceso, por favor, vuelve más tarde!</p>
+    </div>
+    <div id="campanas">
+      <h3>Campañas Recientes</h3>
+      <img src="Consu6.png" alt="alt1" width="100" height="200">
+      <img src="Consu7.jpg" alt="alt2" width="100" height="200">
+    </div>
+  </div>
+</section>
+
+<!-- TikTok -->
+<blockquote class="tiktok-embed"
+  cite="https://www.tiktok.com/@consuflumen/video/7549745030227856645"
+  data-video-id="7549745030227856645"
+  style="max-width: 325px; min-width: 225px;">
+  <section></section>
+</blockquote>
+<script async src="https://www.tiktok.com/embed.js"></script>
+
+
+<!-- Galería -->
+<section id="galeria">
+  <div class="container">
+    <h2>Galería</h2>
+    <div id="fotos">
+      <h3>Fotos</h3>
+      <div class="gallery">
+        <img src="Consu1.jpeg" alt="Foto del dispositivo 1">
+        <img src="Consu2.jpeg" alt="Foto del dispositivo 2">
+        <img src="Consu3.jpeg" alt="Foto del dispositivo 3">
+      </div>
+    </div>
+    <div id="videos">
+      <h3>Videos</h3>
+      <p>Estamos en arreglos, por favor, vuelve más tarde</p>
+    </div>
+  </div>
+</section>
+
+<!-- Mapa de sitio web -->
+<section id="galeria">
+  <div class="container">
+    <h2>Mapa de Sitio Web</h2>
+    <div id="foto">
+      <h3>Fotos</h3>
+      <div class="gallery">
+        <img src="Consu4.jpeg" alt="Mapa Sitio">
+      </div>
+    </div>
+</section>
+
+<!-- Redes Sociales -->
+<section id="redes">
+  <div class="container">
+    <h2>Síguenos en Redes Sociales</h2>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/profile.php?id=61578760835864" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/consuflumen?igsh=MTY0Z3YxNHg5b3FyZg=="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.tiktok.com/@consuflumen?_r=1&_d=el32h949d21j16&sec_uid=MS4wLjABAAAAxpYugk3ZCY3-C74fd1wFH34VZYEbx8SLT3o82XFuR2CDBWY7UFJVNBXD0HVuI6xM&share_author_id=7532331379905774610&sharer_language=es&source=h5_m&u_code=elg8lcjja029kj&timestamp=1753759049&user_id=7532331379905774610&sec_user_id=MS4wLjABAAAAxpYugk3ZCY3-C74fd1wFH34VZYEbx8SLT3o82XFuR2CDBWY7UFJVNBXD0HVuI6xM&item_author_type=1&utm_source=copy&utm_campaign=client_share&utm_medium=android&share_iid=7532233460317243143&share_link_id=1e8382ee-c031-49e2-89aa-25b1d977aab4&share_app_id=1233&ugbiz_name=ACCOUNT&ug_btm=b8727%2Cb7360&social_share_type=5&enable_checksum=1"_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://www.youtube.com/@ConsuflumenS.A.S" target="_blank"><i class="fab fa-youtube"></i></a>
+    </div>
+  </div>
+</section>
+
+
+<!-- Contacto -->
+<section id="contacto">
+  <div class="container">
+    <h2>Contáctanos</h2>
+    <form>
+      <input type="text" placeholder="Tu nombre" required>
+      <input type="email" placeholder="Tu correo" required>
+      <textarea placeholder="Tu mensaje" rows="5" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+
+    <div id="mapa">
+      <h3>Encuéntranos</h3>
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.3825412140854!2d-74.0480321853152!3d4.674258457179842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99f39aac5e6d%3A0x2f97e41014a38b9c!2sConjunto%20Residencial%20Metropolis%20Unidad%2016!5e0!3m2!1ses-419!2sco!4v1696074800000"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 Consuflumen S.A.S. Todos los derechos reservados.</p>
+  <nav>
+    <a href="#">Suscríbete</a> |
+    <a href="#">Términos</a> |
+    <a href="#contacto">Contacto</a> |
+    <a href="#mapa">Ubicación</a>
+  </nav>
+</footer>
+
+</body>
+</html>
